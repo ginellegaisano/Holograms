@@ -87,7 +87,7 @@ function renderTest() {
     // - assume we've got jQuery to hand
     var $container = $('#container');
     console.log($container);
-    $container.text('apples');
+    //$container.text('apples');
     console.log("apples");
     // the camera starts at 0,0,0
     // so pull it back
