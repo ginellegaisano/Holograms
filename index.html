@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+  <script src="node_modules/three/three.min.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="testController.js"></script>
+  </head>
+  <body onload="renderTest();" onkeydown="directionKeyPress(event)">
+  <div>
+    Test Three.js
+  </div>
+
+  <button onclick="directionClick('right');">right</button>
+  <button onclick="directionClick('left');">left</button>
+  <button onclick="directionClick('up');">up</button>
+  <button onclick="directionClick('down');">down</button>
+
+  <div id="container">
+    container
+  </div>
+
+
+
+  </body>
+</html>
