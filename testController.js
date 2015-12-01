@@ -60,10 +60,10 @@ down = 40
 
 function directionClick(direction) {
     var value = 50;
-    if (direction == "left" || direction == "down") {
+    if (direction == "Left" || direction == "Down") {
         value *= -1;
     }
-    if (direction == "left" || direction == "right") {
+    if (direction == "Left" || direction == "Right") {
         sphere.rotation.y += value;
         sphere2.rotation.y += value;
         sphere3.rotation.y += value;
