@@ -14,8 +14,14 @@ html,body {
 
 canvas {
     border-radius: 10px;
-    background: rgba(54, 25, 25, .5);
-    background-color: #15151F;
+}
+
+#image_uploader {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+    font-size: 30px;
 }
 
 #banner {
