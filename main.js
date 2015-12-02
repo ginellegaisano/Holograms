@@ -9,7 +9,7 @@ if (gesture.direction) {
     $('#motion_label').text(gesture.direction);
     $('#motion_label').css('color', '#fff');
     setTimeout(function() {
-        $('#motion_label').css('color', '#000');
+        $('#motion_label').css('color', 'rgba(54, 25, 25, .5)');
     }, 500);
 
     for (var i = 0; i < 5; i++) {
