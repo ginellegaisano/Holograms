@@ -5,26 +5,24 @@
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="hadimichael-gest/src/gest.js"></script>
   <script src="testController.js"></script>
+  <script src="main.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 
   </head>
   <body onload="renderTest();" onkeydown="directionKeyPress(event)">
   <div>
-    Test Three.js
+    Holocam
   </div>
-  <script src="./main.js"></script>
-  <button onclick="directionClick('Right');">right</button>
-  <button onclick="directionClick('Left');">left</button>
-  <button onclick="directionClick('Up');">up</button>
-  <button onclick="directionClick('Down');">down</button>
-  <button class='stop' onclick="stop()">stop the webcam!</button>
-  <div id="motion_label">
-      Your Hand Motion
-  </div>
-  <div id="container">
-    container
-  </div>
+  <div id="motion_label"></div>
+  <div id="container"></div>
 
-
+  <div id="buttons">
+      <button onclick="directionClick('Right');">right</button>
+      <button onclick="directionClick('Left');">left</button>
+      <button onclick="directionClick('Up');">up</button>
+      <button onclick="directionClick('Down');">down</button>
+      <button class='stop' onclick="stop()">stop the webcam!</button>
+  </div>
 
   </body>
 </html>

@@ -3,8 +3,7 @@ var sphere;
 var sphere2;
 var sphere3;
 var sphere4;
-var WIDTH = 800,
-  HEIGHT = 600;
+var WIDTH = 600, HEIGHT = 500;
 
 // set some camera attributes
 var VIEW_ANGLE = 45,
@@ -86,9 +85,9 @@ function renderTest() {
     // get the DOM element to attach to
     // - assume we've got jQuery to hand
     var $container = $('#container');
-    console.log($container);
+    //console.log($container);
     //$container.text('apples');
-    console.log("apples");
+    //console.log("apples");
     // the camera starts at 0,0,0
     // so pull it back
     camera.position.z = 300;
