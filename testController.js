@@ -59,7 +59,7 @@ down = 40
 
 function directionClick(direction) {
     var value = 50;
-    if (direction == "Left" || direction == "Down") {
+    if (direction == "Left" || direction == "Down" || direction == "Long down") {
         value *= -1;
     }
     if (direction == "Left" || direction == "Right") {
