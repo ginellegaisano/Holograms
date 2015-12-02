@@ -11,9 +11,15 @@
   <div id="banner">
     Holocam
   </div>
+
+  <div id="image_uploader">
+    <input id="image-file" type="file" onchange="changeImage(this);"/>
+  </div>
+
   <div id="motion_label"></div>
   <div id="container"></div>
-  <body onload="renderTest();" onkeydown="directionKeyPress(event)">
+
+  <body onload="render('catTest.jpg');" onkeydown="directionKeyPress(event)">
 
   <div id="buttons">
       <button onclick="directionClick('Right');">right</button>

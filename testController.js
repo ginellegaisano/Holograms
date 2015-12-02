@@ -80,7 +80,11 @@ function directionClick(direction) {
 
 }
 
-function renderTest() {
+function render(imageToDisplay) {
+    // clear everything
+    for( var i = scene.children.length - 1; i >= 0; i--) {
+        scene.remove(scene.children[i]);
+    }
 
     // get the DOM element to attach to
     // - assume we've got jQuery to hand
@@ -114,7 +118,7 @@ function renderTest() {
     // load a resource
     loader.load(
         // resource URL
-        'catTest.jpg',
+        imageToDisplay,
         // Function when resource is loaded
         function ( texture ) {
             // do something with the texture

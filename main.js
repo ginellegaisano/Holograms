@@ -24,3 +24,16 @@ gest.start();
 // gest.options.debug(true);
 // gest.options.skinFilter(true);
 //
+//
+
+function changeImage(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            render(e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
