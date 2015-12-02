@@ -26,10 +26,10 @@ canvas {
 
 #banner {
     color: white;
-    font: normal 35px sans-serif;
+    font: normal 25px sans-serif;
+    line-height: 50px;
     position: absolute;
-    bottom: 0;
-    padding: 0 0 5px 5px;
+    padding: 0 0 5px 25px;
 }
 
 #container {
