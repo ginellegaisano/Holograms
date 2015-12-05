@@ -1,8 +1,8 @@
  // set the scene size
-var sphere;
-var sphere2;
-var sphere3;
-var sphere4;
+var cube;
+var cube2;
+var cube3;
+var cube4;
 var WIDTH = 600, HEIGHT = 500;
 
 // set some camera attributes
@@ -13,6 +13,7 @@ var VIEW_ANGLE = 45,
 
 // create a WebGL renderer, camera
 // and a scene
+
 var renderer = new THREE.WebGLRenderer();
 
 var camera =
@@ -41,15 +42,15 @@ down = 40
         value *= -1;
     }
     if (keyCode == 37 /*left*/ || keyCode == 39 /*right*/) {
-        sphere.rotation.y += value;
-        sphere2.rotation.y += value;
-        sphere3.rotation.y += value;
-        sphere4.rotation.y += value;
+        cube.rotation.y += value;
+        cube2.rotation.y += value;
+        cube3.rotation.y += value;
+        cube4.rotation.y += value;
     } else {
-        sphere.rotation.x += value;
-        sphere2.rotation.x += value;
-        sphere3.rotation.x += value;
-        sphere4.rotation.x += value;
+        cube.rotation.x += value;
+        cube2.rotation.x += value;
+        cube3.rotation.x += value;
+        cube4.rotation.x += value;
     }
     // Overwrite rotation
 
@@ -63,15 +64,15 @@ function directionClick(direction) {
         value *= -1;
     }
     if (direction == "Left" || direction == "Right") {
-        sphere.rotation.y += value;
-        sphere2.rotation.y += value;
-        sphere3.rotation.y += value;
-        sphere4.rotation.y += value;
+        cube.rotation.y += value;
+        cube2.rotation.y += value;
+        cube3.rotation.y += value;
+        cube4.rotation.y += value;
     } else {
-        sphere.rotation.x += value;
-        sphere2.rotation.x += value;
-        sphere3.rotation.x += value;
-        sphere4.rotation.x += value;
+        cube.rotation.x += value;
+        cube2.rotation.x += value;
+        cube3.rotation.x += value;
+        cube4.rotation.x += value;
     }
     // Overwrite rotation
 
@@ -102,16 +103,14 @@ function render(imageToDisplay) {
     // attach the render-supplied DOM element
     $container.append(renderer.domElement);
 
-    // set up the sphere vars
-    var radius = 25,
-        segments = 16,
-        rings = 16;
+    // set up the cube vars
+    var sideLength = 50;
 
     // create a new mesh with
-    // sphere geometry - we will cover
-    // the sphereMaterial next!
+    // cube geometry - we will cover
+    // the cubeMaterial next!
 
-    // create the sphere's material
+    // create the cube's material
 
     var loader = new THREE.TextureLoader();
 
@@ -123,55 +122,55 @@ function render(imageToDisplay) {
         function ( texture ) {
             // do something with the texture
 
-            var sphereMaterial = new THREE.MeshBasicMaterial( {
+            var cubeMaterial = new THREE.MeshBasicMaterial( {
                 map: texture
              } );
 
-            sphere = new THREE.Mesh(
+            cube = new THREE.Mesh(
 
-              new THREE.SphereGeometry(
-                radius,
-                segments,
-                rings),
+              new THREE.CubeGeometry(
+                sideLength,
+                sideLength,
+                sideLength),
 
-              sphereMaterial);
-            sphere.position.x -= 50;
+              cubeMaterial);
+            cube.position.x -= 60;
 
-            sphere2 = new THREE.Mesh(
+            cube2 = new THREE.Mesh(
 
-              new THREE.SphereGeometry(
-                radius,
-                segments,
-                rings),
+              new THREE.CubeGeometry(
+                sideLength,
+                sideLength,
+                sideLength),
 
-              sphereMaterial);
-            sphere2.position.x += 50;
+              cubeMaterial);
+            cube2.position.x += 60;
 
-            sphere3 = new THREE.Mesh(
+            cube3 = new THREE.Mesh(
 
-              new THREE.SphereGeometry(
-                radius,
-                segments,
-                rings),
+              new THREE.CubeGeometry(
+                sideLength,
+                sideLength,
+                sideLength),
 
-              sphereMaterial);
-            sphere3.position.y -= 50;
+              cubeMaterial);
+            cube3.position.y -= 60;
 
-            sphere4 = new THREE.Mesh(
+            cube4 = new THREE.Mesh(
 
-              new THREE.SphereGeometry(
-                radius,
-                segments,
-                rings),
+              new THREE.CubeGeometry(
+                sideLength,
+                sideLength,
+                sideLength),
 
-              sphereMaterial);
-            sphere4.position.y += 50;
+              cubeMaterial);
+            cube4.position.y += 60;
 
-            // add spheres to the scene
-            scene.add(sphere);
-            scene.add(sphere2);
-            scene.add(sphere3);
-            scene.add(sphere4);
+            // add cubes to the scene
+            scene.add(cube);
+            scene.add(cube2);
+            scene.add(cube3);
+            scene.add(cube4);
             renderer.render(scene, camera);
 
         },
