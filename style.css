@@ -61,3 +61,10 @@ canvas {
     width: 275px;
     margin-top: 5px;
 }
+
+#debugbox {
+    color: white;
+    position: absolute;
+    padding: 0 0 5px 25px;
+    text-align: center;
+}

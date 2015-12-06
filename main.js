@@ -5,6 +5,7 @@ function stop(){
 gest.options.subscribeWithCallback(function(gesture) {
 var message = '';
 
+
 if (gesture.direction) {
     $('#motion_label').text(gesture.direction);
     $('#motion_label').css('color', '#fff');
@@ -20,20 +21,27 @@ if (gesture.direction) {
 } 
 
 });
+
 gest.start();
 // gest.options.debug(true);
 // gest.options.skinFilter(true);
 //
 //
-
+var file = 'catTest.jpg'
 function changeImage(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
-
+        var sliderValue = document.getElementById("distanceFromMiddle").value;
         reader.onload = function (e) {
-            render(e.target.result);
+            file = e.target.result; //save the target for later.
+            render(e.target.result, sliderValue);
         }
 
         reader.readAsDataURL(input.files[0]);
     }
+}
+
+function changeSlider(input){
+    // console.log(input.value);
+    render(file, input.value);
 }

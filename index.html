@@ -6,6 +6,7 @@
   <script src="hadimichael-gest/src/gest.js"></script>
   <script src="testController.js"></script>
   <script src="main.js"></script>
+  <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <div id="banner">
@@ -18,16 +19,19 @@
 
   <div id="motion_label"></div>
   <div id="container"></div>
-
-  <body onload="render('catTest.jpg');" onkeydown="directionKeyPress(event)">
-
-  <div id="buttons">
+  <body onload="render('catTest.jpg', 60);" onkeydown="directionKeyPress(event)">
+  <div id="debugbox" align="center">
+      Set Distance from middle: </br>
+      <input id="distanceFromMiddle" type="range" min="55" max="85" value = "60" oninput = "changeSlider(this)"/> </br>
+      </br>
+      Debugging input buttons </br>
       <button onclick="directionClick('Right');">right</button>
       <button onclick="directionClick('Left');">left</button>
       <button onclick="directionClick('Up');">up</button>
       <button onclick="directionClick('Down');">down</button>
+      </br></br>
       <button class='stop' onclick="stop()">stop the webcam!</button>
-  </div>
 
+</div>
   </body>
 </html>

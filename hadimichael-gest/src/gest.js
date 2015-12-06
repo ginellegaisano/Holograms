@@ -535,9 +535,11 @@ window.gest = (function (window) {
 	/* @public */
 	gest.prototype.start = function () {
 		userHasAskedToStart = true;
-
+		console.log("538");
 		//so, the user wants us to start, but are we ready to? Stop, if we're not. This will get called again when we are ready.
-		if (!gestIsInitialised) { return false; }
+		if (!gestIsInitialised) {
+			console.log("541");
+		 return false; }
 
 		//check to see if we are already running
 		if (!video || !(video.paused || video.ended || video.seeking || video.readyState < video.HAVE_FUTURE_DATA)) { throwError(2); return false; }
@@ -597,10 +599,14 @@ window.gest = (function (window) {
 
 	/* @public */
 	gest.prototype.stop = function () {
-		if (!gestIsInitialised || !userHasAskedToStart) { return false; }
+		console.log("asked to stop");
+		if (!gestIsInitialised || !userHasAskedToStart) { 
+			console.log("hey");
+			return false; }
 
 		if (video) { video.src = ''; }
-		return !!stream.stop();
+		console.log(stream.getTracks()[0]);
+		return stream.getTracks()[0].stop();
 	};
 
 	/* @public */

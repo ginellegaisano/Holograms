@@ -3,7 +3,9 @@ var cube;
 var cube2;
 var cube3;
 var cube4;
-var WIDTH = 600, HEIGHT = 500;
+var rotationX;
+var rotationY;
+var WIDTH = 500, HEIGHT = 500;
 
 // set some camera attributes
 var VIEW_ANGLE = 45,
@@ -42,11 +44,13 @@ down = 40
         value *= -1;
     }
     if (keyCode == 37 /*left*/ || keyCode == 39 /*right*/) {
+        y = value;
         cube.rotation.y += value;
         cube2.rotation.y += value;
         cube3.rotation.y += value;
         cube4.rotation.y += value;
     } else {
+        x = value;
         cube.rotation.x += value;
         cube2.rotation.x += value;
         cube3.rotation.x += value;
@@ -81,7 +85,7 @@ function directionClick(direction) {
 
 }
 
-function render(imageToDisplay) {
+function render(imageToDisplay , displayDistance) {
     // clear everything
     for( var i = scene.children.length - 1; i >= 0; i--) {
         scene.remove(scene.children[i]);
@@ -99,6 +103,7 @@ function render(imageToDisplay) {
 
     // start the renderer
     renderer.setSize(WIDTH, HEIGHT);
+    
 
     // attach the render-supplied DOM element
     $container.append(renderer.domElement);
@@ -134,7 +139,7 @@ function render(imageToDisplay) {
                 sideLength),
 
               cubeMaterial);
-            cube.position.x -= 60;
+            cube.position.x -= displayDistance;
 
             cube2 = new THREE.Mesh(
 
@@ -144,7 +149,7 @@ function render(imageToDisplay) {
                 sideLength),
 
               cubeMaterial);
-            cube2.position.x += 60;
+            cube2.position.x += displayDistance;
 
             cube3 = new THREE.Mesh(
 
@@ -154,7 +159,7 @@ function render(imageToDisplay) {
                 sideLength),
 
               cubeMaterial);
-            cube3.position.y -= 60;
+            cube3.position.y -= displayDistance;
 
             cube4 = new THREE.Mesh(
 
@@ -164,7 +169,7 @@ function render(imageToDisplay) {
                 sideLength),
 
               cubeMaterial);
-            cube4.position.y += 60;
+            cube4.position.y += displayDistance;
 
             // add cubes to the scene
             scene.add(cube);
